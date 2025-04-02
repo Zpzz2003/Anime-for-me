@@ -1,5 +1,6 @@
 # Anime-for-me
 Project Overview
+
 Anime For Me is a web-based platform designed to help users find anime that suits their tastes. Whether you're new to anime or a longtime fan, this site provides personalized recommendations through an interactive quiz, curated lists, and a community space for discussions.
 
 Features
