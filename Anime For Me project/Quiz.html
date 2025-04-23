@@ -3,60 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Finder</title>
+    <meta name="description" content="Take the Anime For Me quiz and find the perfect anime recommendation tailored to your taste.">
+    <title>Find Your Anime</title>
     <link rel="stylesheet" href="Projectdesign.css">
 </head>
 <body>
     <header>
-        <h1>Anime Finder</h1>
+        <h1>Anime For Me</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="quiz.html">Find Anime</a></li>
+                <li><a href="quiz.html" class="active">Find Anime</a></li>
                 <li><a href="explore.html">Explore</a></li>
                 <li><a href="community.html">Community</a></li>
                 <li><a href="about.html">About</a></li>
+                <li><a href="store.html">Store</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="quiz">
-        <h2>Find Your Perfect Anime</h2>
-        <p>Answer a few questions and get personalized anime recommendations!</p>
-        <form method="post" action="https://webdevbasics.net/scripts/demo.php">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+    <main class="quiz">
+        <h2>Anime Recommendation Quiz</h2>
+        <form action="https://webdevbasics.net/scripts/demo.php" method="post">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label>Preferred Genre:</label><br>
+            <input type="checkbox" name="genre" value="Action"> Action<br>
+            <input type="checkbox" name="genre" value="Romance"> Romance<br>
+            <input type="checkbox" name="genre" value="Comedy"> Comedy<br>
+            <input type="checkbox" name="genre" value="Mystery"> Mystery<br><br>
 
-            <label>Preferred Genre:</label>
-            <input type="checkbox" name="genre" value="Action"> Action
-            <input type="checkbox" name="genre" value="Romance"> Romance
-            <input type="checkbox" name="genre" value="Comedy"> Comedy
-            <input type="checkbox" name="genre" value="Horror"> Horror
-            <input type="checkbox" name="genre" value="Fantasy"> Fantasy
+            <label for="length">Preferred Episode Length:</label><br>
+            <select id="length" name="length">
+                <option value="short">Short (< 12 episodes)</option>
+                <option value="medium">Medium (12–50 episodes)</option>
+                <option value="long">Long (50+ episodes)</option>
+            </select><br><br>
 
-            <label>Do you prefer long or short anime?</label>
-            <input type="radio" name="length" value="Short"> Short (12-24 episodes)
-            <input type="radio" name="length" value="Long"> Long (50+ episodes)
-
-            <label for="age">Your Age Group:</label>
-            <select id="age" name="age">
-                <option value="teen">13-17</option>
-                <option value="young-adult">18-24</option>
-                <option value="adult">25+</option>
-            </select>
-
-            <label for="message">Anything else you'd like to add?</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <input type="submit" value="Get Recommendations">
+            <input type="submit" value="Get Recommendation" class="btn">
         </form>
-    </section>
-    
+    </main>
+
     <footer>
-        <p>© 2025 Anime Finder | Follow us on <a href="#">Twitter</a></p>
+        <p>&copy; 2025 Anime For Me | All rights reserved.</p>
     </footer>
 </body>
 </html>
