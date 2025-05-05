@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Take the Anime For Me quiz and find the perfect anime recommendation tailored to your taste.">
-    <title>Find Your Anime</title>
+    <meta name="description" content="Find anime recommendations based on your interests.">
+    <title>Find Anime - Anime For Me</title>
     <link rel="stylesheet" href="Projectdesign.css">
 </head>
 <body>
@@ -22,26 +22,23 @@
         </nav>
     </header>
 
-    <main class="quiz">
-        <h2>Anime Recommendation Quiz</h2>
-        <form action="https://webdevbasics.net/scripts/demo.php" method="post">
-            <label for="name">Your Name:</label><br>
-            <input type="text" id="name" name="name" required><br><br>
+    <main>
+        <h2>Find Your Next Favorite Anime</h2>
+        <form id="animeQuiz" action="recommendations.html" method="GET">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
 
-            <label>Preferred Genre:</label><br>
-            <input type="checkbox" name="genre" value="Action"> Action<br>
-            <input type="checkbox" name="genre" value="Romance"> Romance<br>
-            <input type="checkbox" name="genre" value="Comedy"> Comedy<br>
-            <input type="checkbox" name="genre" value="Mystery"> Mystery<br><br>
+            <label for="genres">Select Genres You Like:</label>
+            <select id="genres" name="genres" multiple required>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Romance">Romance</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Fantasy">Fantasy</option>
+            </select>
 
-            <label for="length">Preferred Episode Length:</label><br>
-            <select id="length" name="length">
-                <option value="short">Short (< 12 episodes)</option>
-                <option value="medium">Medium (12–50 episodes)</option>
-                <option value="long">Long (50+ episodes)</option>
-            </select><br><br>
-
-            <input type="submit" value="Get Recommendation" class="btn">
+            <button type="submit">Get Recommendations</button>
         </form>
     </main>
 
@@ -50,3 +47,4 @@
     </footer>
 </body>
 </html>
+

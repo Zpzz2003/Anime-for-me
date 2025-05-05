@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Anime recommendations based on your selected genres.">
+    <title>Anime Recommendations - Anime For Me</title>
+    <link rel="stylesheet" href="Projectdesign.css">
+</head>
+<body>
+    <header>
+        <h1>Anime For Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html">Find Anime</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Recommendations Based on Your Selection</h2>
+        <div id="userInfo">
+            <p id="welcomeMessage"></p>
+            <h3>Your Selected Genres:</h3>
+            <ul id="genreList"></ul>
+        </div>
+
+        <h3>Recommended Anime:</h3>
+        <div id="recommendations">
+            <!-- Anime recommendations will be dynamically displayed here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anime For Me | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to display recommendations based on selected genres
+        function getRecommendations(genres) {
+            const recommendations = {
+                "Action": ["Attack on Titan", "Naruto", "One Punch Man"],
+                "Drama": ["Your Lie in April", "Clannad", "Steins;Gate"],
+                "Romance": ["Toradora", "Fruits Basket", "Kimi ni Todoke"],
+                "Comedy": ["One Piece", "Konosuba", "Gintama"],
+                "Thriller": ["Death Note", "Tokyo Ghoul", "Paranoia Agent"],
+                "Fantasy": ["Fullmetal Alchemist", "The Rising of the Shield Hero", "Made in Abyss"]
+            };
+
+            let recommendedAnime = [];
+            genres.forEach(genre => {
+                if (recommendations[genre]) {
+                    recommendedAnime = recommendedAnime.concat(recommendations[genre]);
+                }
+            });
+
+            return [...new Set(recommendedAnime)]; // Remove duplicates
+        }
+
+        // Get the user information from URL parameters
+        function getUserInfo() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const genres = urlParams.getAll('genres');
+            
+            document.getElementById("welcomeMessage").innerText = `Hello, ${name}! Here are your anime recommendations:`;
+            const genreList = document.getElementById("genreList");
+            genres.forEach(genre => {
+                const listItem = document.createElement("li");
+                listItem.innerText = genre;
+                genreList.appendChild(listItem);
+            });
+
+            const recommendations = getRecommendations(genres);
+            const recommendationsDiv = document.getElementById("recommendations");
+            recommendations.forEach(anime => {
+                const animeItem = document.createElement("p");
+                animeItem.innerText = anime;
+                recommendationsDiv.appendChild(animeItem);
+            });
+        }
+
+        window.onload = getUserInfo;
+    </script>
+</body>
+</html>
