@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find anime recommendations based on your interests.">
+    <title>Find Anime - Anime For Me</title>
+    <link rel="stylesheet" href="Projectdesign.css">
+</head>
+<body>
+    <header>
+        <h1>Anime For Me</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="quiz.html" class="active">Find Anime</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="store.html">Store</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Find Your Next Favorite Anime</h2>
+        <form id="animeQuiz" action="recommendations.html" method="GET">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="genres">Select Genres You Like:</label>
+            <select id="genres" name="genres" multiple required>
+                <option value="Action">Action</option>
+                <option value="Drama">Drama</option>
+                <option value="Romance">Romance</option>
+                <option value="Comedy">Comedy</option>
+                <option value="Thriller">Thriller</option>
+                <option value="Fantasy">Fantasy</option>
+            </select>
+
+            <button type="submit">Get Recommendations</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Anime For Me | All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
